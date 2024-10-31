@@ -1,0 +1,80 @@
+<!--
+File: index.html
+GUI Assignment: Creating an Interactive Dynamic Table
+Mena Hanna, UMass Lowell Computer Science, mena_hanna@student.uml.edu
+Copyright (c) 2024 by Mena Hanna. All rights reserved. 
+May be freely copied or excerpted for educational purposes with credit to the author.
+
+Updated by Mena Hanna on October 30, 2024
+
+Description:
+This HTML file sets up the structure for a dynamic multiplication table web app. 
+It includes a form for users to enter minimum and maximum values for both the row and column ranges.
+These values are then used to generate a multiplication table dynamically.
+The HTML file also integrates external CSS for styling and JavaScript for functionality.
+The layout is responsive and includes a header, form, table container, and footer for complete functionality.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Multiplication Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+    <header class="mainheader text-center my-4">
+        <h1 class="display-4">Dynamic Multiplication Table</h1>
+    </header>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <fieldset id="tableForm" class="border p-4 rounded bg-light shadow">
+                    <legend class="fw-bold">Please enter the table ranges</legend>
+                    <div class="input-group mb-3">
+                        <label for="minCol" class="form-label">Minimum Column Value:</label>
+                        <input type="number" id="minCol" name="minCol" class="form-control" min="-50" max="50" required>
+                        <div class="error-message" id="errorMinCol"></div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="maxCol" class="form-label">Maximum Column Value:</label>
+                        <input type="number" id="maxCol" name="maxCol" class="form-control" min="-50" max="50" required>
+                        <div class="error-message" id="errorMaxCol"></div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="minRow" class="form-label">Minimum Row Value:</label>
+                        <input type="number" id="minRow" name="minRow" class="form-control" min="-50" max="50" required>
+                        <div class="error-message" id="errorMinRow"></div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="maxRow" class="form-label">Maximum Row Value:</label>
+                        <input type="number" id="maxRow" name="maxRow" class="form-control" min="-50" max="50" required>
+                        <div class="error-message" id="errorMaxRow"></div>
+                    </div>
+
+                    <button type="button" id="generateBtn" class="btn btn-success w-100">Generate Table</button>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-4">
+            <div class="col-auto">
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordered table-hover text-center"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; Created By Mena Hanna</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
